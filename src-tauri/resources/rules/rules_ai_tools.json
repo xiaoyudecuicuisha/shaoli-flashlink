@@ -1,0 +1,10 @@
+[
+  ["AI工具 | Ollama模型", "%USERPROFILE%\\.ollama\\models", "dir", false, "Ollama AI模型文件", true],
+  ["AI工具 | HuggingFace缓存", "%USERPROFILE%\\.cache\\huggingface", "dir", false, "HuggingFace模型缓存", true],
+  ["AI工具 | PyTorch缓存", "%USERPROFILE%\\.cache\\torch", "dir", false, "PyTorch缓存", true],
+  ["AI工具 | TensorFlow缓存", "%USERPROFILE%\\.keras", "dir", false, "TensorFlow/Keras缓存", true],
+  ["AI工具 | OpenAI缓存", "%USERPROFILE%\\.cache\\openai", "dir", false, "OpenAI API缓存", true],
+  ["AI工具 | Stable Diffusion缓存", "%USERPROFILE%\\.cache\\huggingface\\hub", "dir", false, "SD模型缓存", true],
+  ["AI工具 | LM Studio模型", "%USERPROFILE%\\.cache\\lm-studio", "dir", false, "LM Studio模型缓存", true],
+  ["AI工具 | ComfyUI缓存", "%USERPROFILE%\\.cache\\comfyui", "dir", false, "ComfyUI缓存", true]
+]

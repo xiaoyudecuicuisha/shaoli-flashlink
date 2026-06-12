@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# Rust build
+src-tauri/target/
+
+# Build output
+ui/dist/
+
+# IDE & AI tools
+.vscode/
+.idea/
+.qoder/
+*.swp
+*.swo
+AGENTS.md
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Tauri generated
+src-tauri/gen/schemas/
+
+# Config (contains user-specific data)
+config.json
+
+# Whiteboard user data
+whiteboards/

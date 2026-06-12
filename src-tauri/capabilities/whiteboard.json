@@ -1,0 +1,13 @@
+{
+  "identifier": "whiteboard-capability",
+  "description": "Capabilities for whiteboard webview windows",
+  "windows": ["whiteboard-*"],
+  "permissions": [
+    "core:default",
+    "core:event:allow-emit",
+    "core:event:allow-listen",
+    "core:event:default",
+    "core:window:allow-set-focus",
+    "core:window:allow-close"
+  ]
+}

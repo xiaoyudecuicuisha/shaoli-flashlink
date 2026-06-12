@@ -1,0 +1,17 @@
+[
+  ["第三方 | Chrome缓存", "%LocalAppData%\\Google\\Chrome\\User Data\\Default\\Cache", "dir", true, "Chrome浏览器缓存", true],
+  ["第三方 | Chrome缓存2", "%LocalAppData%\\Google\\Chrome\\User Data\\Default\\Code Cache", "dir", true, "Chrome代码缓存", true],
+  ["第三方 | Edge缓存", "%LocalAppData%\\Microsoft\\Edge\\User Data\\Default\\Cache", "dir", true, "Edge浏览器缓存", true],
+  ["第三方 | Edge缓存2", "%LocalAppData%\\Microsoft\\Edge\\User Data\\Default\\Code Cache", "dir", true, "Edge代码缓存", true],
+  ["第三方 | Firefox缓存", "%LocalAppData%\\Mozilla\\Firefox\\Profiles", "dir", false, "Firefox浏览器缓存", true],
+  ["第三方 | Office缓存", "%LocalAppData%\\Microsoft\\Office\\16.0\\OfficeFileCache", "dir", true, "Office文件缓存", true],
+  ["第三方 | Office最近", "%AppData%\\Microsoft\\Office\\Recent", "dir", false, "Office最近文件记录", true],
+  ["第三方 | Adobe缓存", "%LocalAppData%\\Adobe\\Common\\Media Cache Files", "dir", true, "Adobe媒体缓存", true],
+  ["第三方 | VS Code缓存", "%AppData%\\Code\\Cache", "dir", true, "VS Code缓存", true],
+  ["第三方 | VS Code日志", "%AppData%\\Code\\logs", "dir", true, "VS Code日志", true],
+  ["第三方 | npm缓存", "%AppData%\\npm-cache", "dir", true, "npm包缓存", true],
+  ["第三方 | pip缓存", "%LocalAppData%\\pip\\cache", "dir", true, "pip包缓存", true],
+  ["第三方 | Git缓存", "%LocalAppData%\\Temp\\git", "dir", true, "Git临时文件", true],
+  ["第三方 | Spotify缓存", "%LocalAppData%\\Spotify\\Storage", "dir", true, "Spotify缓存", true],
+  ["第三方 | Steam缓存", "C:\\Program Files (x86)\\Steam\\appcache", "dir", false, "Steam应用缓存", true]
+]

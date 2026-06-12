@@ -1,0 +1,55 @@
+{
+  "$schema": "https://raw.githubusercontent.com/nicegui/tauri/dev/crates/tauri-cli/schema.json",
+  "productName": "绍理闪连",
+  "version": "3.0.0",
+  "identifier": "com.shaoli.flashlink",
+  "build": {
+    "frontendDist": "../ui/dist",
+    "devUrl": "http://localhost:5173",
+    "beforeDevCommand": "",
+    "beforeBuildCommand": "cd ../ui && pnpm build"
+  },
+  "app": {
+    "withGlobalTauri": true,
+    "windows": [
+      {
+        "title": "绍理闪连",
+        "width": 900,
+        "height": 680,
+        "minWidth": 680,
+        "minHeight": 520,
+        "center": true,
+        "decorations": false,
+        "transparent": false,
+        "resizable": true
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https:; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:"
+    }
+  },
+  "plugins": {
+    "shell": {
+      "open": "^((mailto:\\w+)|(tel:\\w+)|(https?://\\w+)).+|^[A-Za-z]:\\\\.*$|^/.*$"
+    },
+    "updater": {
+      "endpoints": [
+        "https://github.com/xiaoyudecuicuisha/shaoli-flashlink/releases/latest/download/latest.json"
+      ],
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDkzREFGMEE4RTM1MjJFQkQKUldTOUxsTGpxUERhazNBcGw3RWlMbi8wa1FuZEcwcGE5L1FjR1Y4YnRDektZT0FWYXhaTTRORjQK"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis"],
+    "createUpdaterArtifacts": true,
+    "icon": [
+      "icons/icon.ico"
+    ],
+    "windows": {
+      "nsis": {
+        "installerIcon": "icons/icon.ico"
+      }
+    }
+  }
+}

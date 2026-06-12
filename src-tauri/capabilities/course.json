@@ -1,0 +1,10 @@
+{
+  "identifier": "course-capability",
+  "description": "Capabilities for course assistant webview windows",
+  "windows": ["course-*"],
+  "permissions": [
+    "core:default",
+    "core:window:allow-set-focus",
+    "core:window:allow-close"
+  ]
+}

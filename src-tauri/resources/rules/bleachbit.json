@@ -1,0 +1,14 @@
+[
+  ["Windows | 临时文件 | 系统临时目录", "%TEMP%", "dir", true, "Windows临时文件目录", true],
+  ["Windows | 临时文件 | Windows Temp", "%WinDir%\\Temp", "dir", true, "Windows系统临时目录", true],
+  ["Windows | 临时文件 | Prefetch", "%WinDir%\\Prefetch", "dir", false, "预读取缓存", true],
+  ["Windows | 更新缓存 | SoftwareDistribution", "%WinDir%\\SoftwareDistribution\\Download", "dir", true, "Windows更新下载缓存", true],
+  ["Windows | 日志 | Windows日志", "%WinDir%\\Logs", "dir", false, "Windows日志文件", true],
+  ["Windows | 日志 | CBS日志", "%WinDir%\\Logs\\CBS", "dir", false, "组件服务日志", true],
+  ["Windows | 缩略图缓存", "%LocalAppData%\\Microsoft\\Windows\\Explorer", "dir", true, "资源管理器缩略图缓存", true],
+  ["Windows | 字体缓存", "%LocalAppData%\\Microsoft\\Windows\\Fonts", "dir", false, "字体缓存文件", true],
+  ["Windows | 错误报告", "%LocalAppData%\\Microsoft\\Windows\\WER", "dir", true, "Windows错误报告", true],
+  ["Windows | Defender历史", "%ProgramData%\\Microsoft\\Windows Defender\\Scans\\History", "dir", false, "Defender扫描历史", true],
+  ["Windows | Defender隔离", "%ProgramData%\\Microsoft\\Windows Defender\\Quarantine", "dir", false, "Defender隔离文件", true],
+  ["Windows | 回收站", "C:\\$Recycle.Bin", "dir", false, "回收站文件", true]
+]

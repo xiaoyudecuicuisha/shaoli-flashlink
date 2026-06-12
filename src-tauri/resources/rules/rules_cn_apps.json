@@ -1,0 +1,21 @@
+[
+  ["国产软件 | 微信缓存", "%AppData%\\Tencent\\WeChat\\Applet", "dir", true, "微信小程序缓存", true],
+  ["国产软件 | 微信日志", "%AppData%\\Tencent\\WeChat\\log", "dir", true, "微信日志文件", true],
+  ["国产软件 | 微信更新", "%AppData%\\Tencent\\WeChat\\Update", "dir", true, "微信更新包", true],
+  ["国产软件 | QQ缓存", "%LocalAppData%\\Tencent\\QQ", "dir", true, "QQ缓存文件", true],
+  ["国产软件 | QQ日志", "%AppData%\\Tencent\\Users\\QQ\\log", "dir", true, "QQ日志", true],
+  ["国产软件 | 钉钉缓存", "%AppData%\\DingTalk\\cache", "dir", true, "钉钉缓存", true],
+  ["国产软件 | 钉钉日志", "%AppData%\\DingTalk\\logs", "dir", true, "钉钉日志", true],
+  ["国产软件 | WPS缓存", "%AppData%\\kingsoft\\office6\\cache", "dir", true, "WPS缓存", true],
+  ["国产软件 | WPS云文档", "%LocalAppData%\\kingsoft\\wps\\cloud", "dir", false, "WPS云文档缓存", true],
+  ["国产软件 | 百度网盘缓存", "%AppData%\\BaiduNetdisk\\cache", "dir", true, "百度网盘缓存", true],
+  ["国产软件 | 百度网盘日志", "%AppData%\\BaiduNetdisk\\log", "dir", true, "百度网盘日志", true],
+  ["国产软件 | 企业微信缓存", "%AppData%\\Tencent\\WXWork\\cache", "dir", true, "企业微信缓存", true],
+  ["国产软件 | 企业微信日志", "%AppData%\\Tencent\\WXWork\\log", "dir", true, "企业微信日志", true],
+  ["国产软件 | 飞书缓存", "%LocalAppData%\\Lark\\cache", "dir", true, "飞书缓存", true],
+  ["国产软件 | 飞书日志", "%LocalAppData%\\Lark\\logs", "dir", true, "飞书日志", true],
+  ["国产软件 | 抖音缓存", "%LocalAppData%\\Douyin\\cache", "dir", true, "抖音缓存", true],
+  ["国产软件 | 网易云音乐缓存", "%LocalAppData%\\NetEase\\CloudMusic\\cache", "dir", true, "网易云音乐缓存", true],
+  ["国产软件 | B站缓存", "%LocalAppData%\\Bilibili\\cache", "dir", true, "B站缓存", true],
+  ["国产软件 | 搜狗输入法缓存", "%LocalAppData%\\SogouInput\\cache", "dir", true, "搜狗输入法缓存", true]
+]

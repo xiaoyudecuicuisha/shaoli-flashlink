@@ -1,0 +1,18 @@
+[
+  ["开发工具 | VS Code扩展缓存", "%USERPROFILE%\\.vscode\\extensions", "dir", false, "VS Code扩展缓存", true],
+  ["开发工具 | VS Code工作区", "%AppData%\\Code\\User\\workspaceStorage", "dir", true, "VS Code工作区存储", true],
+  ["开发工具 | Git对象", "%USERPROFILE%\\.git\\objects", "dir", false, "Git对象缓存", true],
+  ["开发工具 | npm全局缓存", "%AppData%\\npm-cache", "dir", true, "npm全局缓存", true],
+  ["开发工具 | npm日志", "%AppData%\\npm-cache\\_logs", "dir", true, "npm日志", true],
+  ["开发工具 | pnpm缓存", "%LocalAppData%\\pnpm\\store", "dir", false, "pnpm存储", true],
+  ["开发工具 | pip缓存", "%LocalAppData%\\pip\\cache", "dir", true, "pip包缓存", true],
+  ["开发工具 | pip日志", "%LocalAppData%\\pip\\log", "dir", true, "pip日志", true],
+  ["开发工具 | Cargo缓存", "%USERPROFILE%\\.cargo\\registry\\cache", "dir", false, "Rust Cargo缓存", true],
+  ["开发工具 | Cargo目标", "%USERPROFILE%\\.cargo\\target", "dir", false, "Rust Cargo构建目标", true],
+  ["开发工具 | Gradle缓存", "%USERPROFILE%\\.gradle\\caches", "dir", false, "Gradle构建缓存", true],
+  ["开发工具 | Maven缓存", "%USERPROFILE%\\.m2\\repository", "dir", false, "Maven本地仓库", true],
+  ["开发工具 | Docker缓存", "%LocalAppData%\\Docker\\cache", "dir", false, "Docker缓存", true],
+  ["开发工具 | Conda缓存", "%USERPROFILE%\\.conda\\pkgs", "dir", false, "Conda包缓存", true],
+  ["开发工具 | Yarn缓存", "%LocalAppData%\\Yarn\\Cache", "dir", true, "Yarn缓存", true],
+  ["开发工具 | Composer缓存", "%AppData%\\Composer\\cache", "dir", true, "Composer缓存", true]
+]

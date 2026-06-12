@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>白板</title>
+  <base href="./">
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
+  <link rel="stylesheet" crossorigin href="./assets/index-DTUgZRKx.css">
+  <style>
+    /* 隐藏 Drawnix 品牌元素 */
+    a[href*="github.com/plait-board"],
+    a[href*="github.com"][aria-label="GitHub"],
+    button[aria-label="GitHub"],
+    [class*="social"],
+    [data-testid="socials"] {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+      height: 0 !important;
+      width: 0 !important;
+      overflow: hidden !important;
+    }
+    
+    /* 加载状态 */
+    .loading-overlay {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #171412;
+      color: #F0E8E0;
+      z-index: 9999;
+      transition: opacity 0.3s ease;
+    }
+    
+    .loading-overlay.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+    
+    .loading-spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid #2A2624;
+      border-top-color: #B56248;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    
+    .loading-text {
+      margin-top: 16px;
+      font-size: 14px;
+      color: #A89E96;
+      font-family: "DM Sans", "Microsoft YaHei", sans-serif;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <!-- 加载状态 -->
+  <div id="loading" class="loading-overlay">
+    <div class="loading-spinner"></div>
+    <p class="loading-text">加载白板中...</p>
+  </div>
+  
+  <!-- Drawnix 挂载点 -->
+  <div id="root"></div>
+  
+  <script>
+    // 从 URL 参数获取白板名称
+    const params = new URLSearchParams(window.location.search);
+    const boardName = params.get('name') || '新白板';
+    
+    // 设置标题
+    document.title = `白板 - ${boardName}`;
+    
+    // 保存白板名称到全局变量
+    window.__BOARD_NAME__ = boardName;
+    
+    // 隐藏加载状态
+    function hideLoading() {
+      const loading = document.getElementById('loading');
+      if (loading) {
+        loading.classList.add('hidden');
+        setTimeout(() => loading.remove(), 300);
+      }
+    }
+    
+    // 监听 Drawnix 初始化完成
+    window.addEventListener('load', () => {
+      // 延迟隐藏加载状态，等待 Drawnix 渲染
+      setTimeout(hideLoading, 1000);
+    });
+  </script>
+  
+  <!-- localforage 拦截器 -->
+  <script>
+    // 等待 localforage 加载后进行拦截
+    // 注意：这个脚本需要在 Drawnix 的 JS 之前执行
+    // 但由于 Drawnix 是打包后的模块，我们需要使用另一种方式
+    
+    // 定义全局拦截函数
+    window.__TAURI_SAVE__ = async function(data) {
+      if (window.__TAURI__ && window.__TAURI__.core) {
+        try {
+          await window.__TAURI__.core.invoke('save_whiteboard_data', {
+            name: window.__BOARD_NAME__,
+            data: data
+          });
+          console.log('白板数据已同步到 Tauri');
+        } catch (e) {
+          console.error('同步到 Tauri 失败:', e);
+        }
+      }
+    };
+    
+    window.__TAURI_LOAD__ = async function() {
+      if (window.__TAURI__ && window.__TAURI__.core) {
+        try {
+          const result = await window.__TAURI__.core.invoke('load_whiteboard_data', {
+            name: window.__BOARD_NAME__
+          });
+          console.log('从 Tauri 加载白板数据');
+          return result;
+        } catch (e) {
+          console.error('从 Tauri 加载失败:', e);
+          return null;
+        }
+      }
+      return null;
+    };
+    
+    // 防抖保存
+    let saveTimer = null;
+    window.__DEBOUNCE_SAVE__ = function(data) {
+      if (saveTimer) clearTimeout(saveTimer);
+      saveTimer = setTimeout(() => {
+        window.__TAURI_SAVE__(data);
+      }, 2000);
+    };
+  </script>
+  
+  <!-- Drawnix 资源 -->
+  <script type="module" crossorigin src="./assets/index-q7ZSv5mB.js"></script>
+  
+  <!-- 白板数据同步模块 -->
+  <script src="./board-sync.js"></script>
+  
+  <!-- 窗口关闭确认 -->
+  <script>
+    window.addEventListener('beforeunload', (e) => {
+      // 通知主窗口白板窗口即将关闭
+      if (window.__TAURI__ && window.__TAURI__.event) {
+        window.__TAURI__.event.emit('whiteboard-closing', { 
+          name: window.__BOARD_NAME__ 
+        });
+      }
+    });
+  </script>
+</body>
+</html>
